@@ -1,0 +1,22 @@
+# This cloud formation creates the cloud watch trigger, the scheduler lambda,
+# and the processing lambda
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+
+Parameters:
+  ENV:
+    Type: String
+
+
+Resources:
+  LambdaLayer:
+    Type: AWS::Serverless::LayerVersion
+    RetentionPolicy: Retain
+    DeletionPolicy: Retain
+    Properties:
+      ContentUri: layer
+      CompatibleRuntimes:
+        - python3.8
+    Metadata:
+      BuildMethod: makefile
+

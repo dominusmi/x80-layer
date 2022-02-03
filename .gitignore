@@ -1,0 +1,5 @@
+/layer/x80-database/
+/layer/x80-datastructures/
+/layer/x80-integrations/
+/layer/x80-lambda-utils/
+/.aws-sam/
